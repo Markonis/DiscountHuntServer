@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+photo_one:
+  id: 1
+  data: Some data
+  file_type: jpg

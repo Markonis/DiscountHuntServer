@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+user_one:
+  id: 1
+  first_name: John
+  last_name: Appleseed
+  phone: 123456
+  username: johnny
+  encrypted_password: pass123
+  encrypted_password_iv: ABCDEFGAHC121532122

@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: SQL_ASCII
+  database: discount_hunt_dev
+  pool: 5
+  username: ubuntu
+  password:
+
+test:
+  adapter: postgresql
+  encoding: SQL_ASCII
+  database: discount_hunt_test
+  pool: 5
+  username: ubuntu
+  password:

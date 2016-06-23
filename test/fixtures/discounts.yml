@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+discount_one:
+  title: Test discount title
+  description: Test discount description
+  category: Test category
+  votes: 1
+  price: 9.99
+  user_id: 1
+  location_id: 1
+  photo_id: 1
