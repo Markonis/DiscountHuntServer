@@ -1,6 +1,6 @@
 class Discount < ActiveRecord::Base
 
-  belongs_to :user
+  belongs_to :user, inverse_of: :discounts
   belongs_to :location, dependent: :destroy
   belongs_to :photo, dependent: :destroy
 

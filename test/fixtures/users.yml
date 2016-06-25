@@ -8,3 +8,16 @@ user_one:
   username: johnny
   encrypted_password: pass123
   encrypted_password_iv: ABCDEFGAHC121532122
+  location_id: 1
+  photo_id: 1
+
+user_two:
+  id: 2
+  first_name: Lisa
+  last_name: Appleseed
+  phone: 654321
+  username: lisa
+  encrypted_password: pass321
+  encrypted_password_iv: ABCDEFGAHC121532122
+  location_id: 1
+  photo_id: 1
