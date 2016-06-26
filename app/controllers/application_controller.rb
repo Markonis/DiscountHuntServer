@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def query_user_session(token)
-    UserSession.where(token: token).first
+    UserSession.where(token: token, archived: false).first
   end
 
   def user_session_active?(user_session)
