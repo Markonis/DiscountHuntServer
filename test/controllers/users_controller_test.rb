@@ -23,7 +23,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     assert_difference('User.count') do
-      post :create, token: 'token_1', user: @create_update_params
+      post :create, user: @create_update_params
     end
 
     assert_redirected_to user_path(assigns(:user))
