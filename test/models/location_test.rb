@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class LocationTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "in_radius returns correct locations" do
+    center = Location.new lat: 15, lng: 15
+    result = Location.in_radius(center, 5)
+
+    assert_equal result.count, 2
+    assert_equal [12, 17], result.map(&:lat).sort
+  end
 end

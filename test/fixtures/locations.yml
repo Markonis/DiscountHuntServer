@@ -2,5 +2,20 @@
 
 location_one:
   id: 1
-  lng: 9.99
-  lat: 9.99
+  lng: 5
+  lat: 5
+
+location_two:
+  id: 2
+  lng: 12
+  lat: 12
+
+location_three:
+  id: 3
+  lng: 17
+  lat: 17
+
+location_four:
+  id: 4
+  lng: 23
+  lat: 23
