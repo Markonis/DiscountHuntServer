@@ -69,6 +69,6 @@ class UserSessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_session_params
-      params.require(:user_session).permit(:user_id, :token)
+      params.require(:user_session).permit(:user_id, :token, :archived)
     end
 end

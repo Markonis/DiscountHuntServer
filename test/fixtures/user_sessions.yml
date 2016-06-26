@@ -3,7 +3,9 @@
 user_session_one:
   user_id: 1
   token: token_1
+  archived: false
 
 user_session_two:
   user_id: 2
   token: token_2
+  archived: true
