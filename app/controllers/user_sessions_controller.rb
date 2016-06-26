@@ -1,25 +1,5 @@
 class UserSessionsController < ApplicationController
-  before_action :set_user_session, only: [:show, :edit, :update, :destroy]
-
-  # GET /user_sessions
-  # GET /user_sessions.json
-  def index
-    @user_sessions = UserSession.all
-  end
-
-  # GET /user_sessions/1
-  # GET /user_sessions/1.json
-  def show
-  end
-
-  # GET /user_sessions/new
-  def new
-    @user_session = UserSession.new
-  end
-
-  # GET /user_sessions/1/edit
-  def edit
-  end
+  before_action :set_user_session, only: :update
 
   # POST /user_sessions
   # POST /user_sessions.json
@@ -48,16 +28,6 @@ class UserSessionsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @user_session.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /user_sessions/1
-  # DELETE /user_sessions/1.json
-  def destroy
-    @user_session.destroy
-    respond_to do |format|
-      format.html { redirect_to user_sessions_url, notice: 'User session was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

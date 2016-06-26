@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :user_sessions
+  resources :user_sessions, only: [:create, :update]
   resources :friendships
   resources :discounts
   resources :settings
