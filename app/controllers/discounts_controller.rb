@@ -1,4 +1,5 @@
 class DiscountsController < ApplicationController
+  before_action :check_user_session
   before_action :set_discount, only: [:show, :edit, :update, :destroy]
 
   # GET /discounts

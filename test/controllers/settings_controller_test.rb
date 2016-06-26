@@ -6,42 +6,42 @@ class SettingsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :index, token: 'token_1'
     assert_response :success
     assert_not_nil assigns(:settings)
   end
 
   test "should get new" do
-    get :new
+    get :new, token: 'token_1'
     assert_response :success
   end
 
   test "should create setting" do
     assert_difference('Setting.count') do
-      post :create, setting: { enable_background_process: @setting.enable_background_process, search_radius: @setting.search_radius, user_id: @setting.user_id }
+      post :create, token: 'token_1', setting: { enable_background_process: @setting.enable_background_process, search_radius: @setting.search_radius, user_id: @setting.user_id }
     end
 
     assert_redirected_to setting_path(assigns(:setting))
   end
 
   test "should show setting" do
-    get :show, id: @setting
+    get :show, token: 'token_1', id: @setting
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @setting
+    get :edit, token: 'token_1', id: @setting
     assert_response :success
   end
 
   test "should update setting" do
-    patch :update, id: @setting, setting: { enable_background_process: @setting.enable_background_process, search_radius: @setting.search_radius, user_id: @setting.user_id }
+    patch :update, token: 'token_1', id: @setting, setting: { enable_background_process: @setting.enable_background_process, search_radius: @setting.search_radius, user_id: @setting.user_id }
     assert_redirected_to setting_path(assigns(:setting))
   end
 
   test "should destroy setting" do
     assert_difference('Setting.count', -1) do
-      delete :destroy, id: @setting
+      delete :destroy, token: 'token_1', id: @setting
     end
 
     assert_redirected_to settings_path

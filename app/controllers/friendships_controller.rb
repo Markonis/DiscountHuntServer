@@ -1,4 +1,5 @@
 class FriendshipsController < ApplicationController
+  before_action :check_user_session
   before_action :set_friendship, only: [:show, :edit, :update, :destroy]
 
   # GET /friendships
