@@ -4,7 +4,11 @@ class UserSessionsController < ApplicationController
   # POST /user_sessions
   # POST /user_sessions.json
   def create
-    @user_session = UserSession.new(user_session_params)
+    user = query_user
+
+    if user.present?
+      @user_session = UserSession.new(user: user)
+    end
 
     respond_to do |format|
       if @user_session.save
@@ -39,6 +43,11 @@ class UserSessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_session_params
-      params.require(:user_session).permit(:user_id, :token, :archived)
+      params.require(:user_session).permit(:username, :password)
+    end
+
+    def query_user
+      User.by_credentials(user_session_params[:username],
+        user_session_params[:password])
     end
 end
