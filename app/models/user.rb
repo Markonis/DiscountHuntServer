@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :discounts, dependent: :destroy, inverse_of: :user
 
 
-  validates_presence_of :location, :photo, :first_name, :last_name, :phone,
+  validates_presence_of :first_name, :last_name, :phone,
     :username, :password
 
   after_create :create_setting
@@ -29,5 +29,14 @@ class User < ActiveRecord::Base
 
   def destroy_friendships
     friendships.each(&:destroy)
+  end
+
+  def self.by_credentials(username, password)
+    user = User.where(username: username).first
+    if user.present? && user.password == password
+      user
+    else
+      nil
+    end
   end
 end
