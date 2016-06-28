@@ -5,6 +5,8 @@ class UserSession < ActiveRecord::Base
 
   validates_presence_of :user, :token
 
+  before_validation :set_token
+
   def active?
     older_than?(MAX_AGE)
   end
@@ -15,5 +17,9 @@ class UserSession < ActiveRecord::Base
 
   def age_in_seconds
     ((DateTime.now - updated_at.to_datetime) * 86400).seconds
+  end
+
+  def set_token
+    self.token = SecureRandom.hex 16
   end
 end
