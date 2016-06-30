@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Query:</strong>
+  <%= @discount_search.query %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @discount_search.result %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @discount_search.user %>
+</p>
+
+<%= link_to 'Edit', edit_discount_search_path(@discount_search) %> |
+<%= link_to 'Back', discount_searches_path %>

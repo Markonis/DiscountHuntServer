@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :discount_searches
   resources :user_sessions, only: [:create, :update]
   resources :friendships
   resources :discounts

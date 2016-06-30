@@ -1,0 +1,2 @@
+module DiscountSearchesHelper
+end
