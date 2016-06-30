@@ -1,11 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 discount_one:
-  title: Test discount title
-  description: Test discount description
-  category: Test category
+  title: Computer mouse
+  description: Very nice mouse with red light
+  category: Electronics
   votes: 1
-  price: 9.99
+  price: 31.45
   user_id: 1
-  location_id: 1
-  photo_id: 1
+
+discount_two:
+  title: Man shirt
+  description: Blue shirt with short sleaves
+  category: Clothes
+  votes: 1
+  price: 20.32
+  user_id: 1
