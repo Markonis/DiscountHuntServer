@@ -1,7 +1,6 @@
 class DiscountSearch < ActiveRecord::Base
   belongs_to :user
 
-  validates_presence_of :query
   before_create :set_result
 
   def set_result
@@ -9,6 +8,10 @@ class DiscountSearch < ActiveRecord::Base
   end
 
   def perform_search
-    Discount.where('title LIKE :search OR description LIKE :search OR category LIKE :search', search: "%#{query}%")
+    if query.present?
+      Discount.where('title LIKE :query OR description LIKE :query OR category LIKE :query', query: "%#{query}%")
+    else
+      Discount.all
+    end
   end
 end
