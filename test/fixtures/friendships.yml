@@ -3,3 +3,4 @@
 friendship_one:
   user_a_id: 1
   user_b_id: 2
+  status: 'pending'
