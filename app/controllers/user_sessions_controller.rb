@@ -5,10 +5,7 @@ class UserSessionsController < ApplicationController
   # POST /user_sessions.json
   def create
     user = query_user
-
-    if user.present?
-      @user_session = UserSession.new(user: user)
-    end
+    @user_session = UserSession.new(user: user)
 
     respond_to do |format|
       if @user_session.save
