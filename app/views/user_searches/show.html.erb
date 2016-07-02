@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Query:</strong>
+  <%= @user_search.query %>
+</p>
+
+<p>
+  <strong>Hardware uuid:</strong>
+  <%= @user_search.hardware_uuid %>
+</p>
+
+<%= link_to 'Edit', edit_user_search_path(@user_search) %> |
+<%= link_to 'Back', user_searches_path %>

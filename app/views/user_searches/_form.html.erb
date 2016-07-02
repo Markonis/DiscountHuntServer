@@ -1,0 +1,25 @@
+<%= form_for(@user_search) do |f| %>
+  <% if @user_search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_search.errors.count, "error") %> prohibited this user_search from being saved:</h2>
+
+      <ul>
+      <% @user_search.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :query %><br>
+    <%= f.text_field :query %>
+  </div>
+  <div class="field">
+    <%= f.label :hardware_uuid %><br>
+    <%= f.text_field :hardware_uuid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

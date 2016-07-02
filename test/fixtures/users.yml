@@ -14,8 +14,8 @@ user_one:
 user_two:
   id: 2
   first_name: Lisa
-  last_name: Appleseed
-  phone: 654321
+  last_name: Simpson
+  phone: 123456
   username: lisa
   encrypted_password: pass321
   encrypted_password_iv: ABCDEFGAHC121532122
