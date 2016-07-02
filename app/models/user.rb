@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, :phone,
     :username, :password
 
-  accepts_nested_attributes_for :user_devices
+  accepts_nested_attributes_for :user_devices, :photo
 
   after_create :create_setting
   before_destroy :destroy_friendships
