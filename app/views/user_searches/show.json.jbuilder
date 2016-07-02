@@ -1,1 +1,1 @@
-json.extract! @user_search, :id, :query, :hardware_uuid, :created_at, :updated_at
+json.extract! @user_search, :id, :query, :hardware_uuid, :result, :created_at, :updated_at
