@@ -4,10 +4,13 @@ class User < ActiveRecord::Base
   belongs_to :location
   has_one :setting, dependent: :destroy, inverse_of: :user
   has_many :discounts, dependent: :destroy, inverse_of: :user
+  has_many :user_devices, dependent: :destroy, inverse_of: :user
 
 
   validates_presence_of :first_name, :last_name, :phone,
     :username, :password
+
+  accepts_nested_attributes_for :user_devices
 
   after_create :create_setting
   before_destroy :destroy_friendships
