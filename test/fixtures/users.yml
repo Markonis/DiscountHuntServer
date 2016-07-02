@@ -21,3 +21,14 @@ user_two:
   encrypted_password_iv: ABCDEFGAHC121532122
   location_id: 1
   photo_id: 1
+
+user_three:
+  id: 3
+  first_name: Bart
+  last_name: Simpson
+  phone: 123456
+  username: bart
+  encrypted_password: pass456
+  encrypted_password_iv: ABCDEFGAHC121532122
+  location_id: 1
+  photo_id: 1

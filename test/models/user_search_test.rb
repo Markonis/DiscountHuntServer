@@ -8,7 +8,7 @@ class UserSearchTest < ActiveSupport::TestCase
 
     instance = UserSearch.new query: '123456'
     result = instance.perform_search
-    assert_equal 2, result.count
+    assert_equal 3, result.count
 
     instance = UserSearch.new query: 'Noresult'
     result = instance.perform_search
