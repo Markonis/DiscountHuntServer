@@ -18,7 +18,7 @@ class FriendshipsControllerTest < ActionController::TestCase
 
   test "should create friendship" do
     assert_difference('Friendship.count') do
-      post :create, token: 'token_1', friendship: { user_a_id: @friendship.user_a_id, user_b_id: @friendship.user_b_id }
+      post :create, token: 'token_1', friendship: { user_a_id: 1, user_b_id: 3 }
     end
 
     assert_redirected_to friendship_path(assigns(:friendship))
