@@ -30,7 +30,7 @@ class UserSearch < ActiveRecord::Base
       relation = relation.where(id: user_ids)
     end
 
-    relation.includes(:photo, :location)
+    relation.includes(:location)
   end
 
   def users_to_builder(users)

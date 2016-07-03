@@ -17,7 +17,7 @@ class DiscountSearch < ActiveRecord::Base
       Discount.all
     end
 
-    relation.includes({user: :photo}, :photo, :location)
+    relation.includes(:location)
   end
 
   def discounts_to_builder(discounts)
