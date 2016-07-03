@@ -21,4 +21,16 @@ class UserSearchTest < ActiveSupport::TestCase
     assert_equal 1, result.count
     assert_equal 'John', result.first.first_name
   end
+
+  test "finds the correct users by given friends_with" do
+    instance = UserSearch.new friends_with: 1
+    result = instance.perform_search
+    assert_equal 1, result.count
+    assert_equal 'Lisa', result.first.first_name
+
+    instance = UserSearch.new friends_with: 2
+    result = instance.perform_search
+    assert_equal 1, result.count
+    assert_equal 'John', result.first.first_name
+  end
 end
