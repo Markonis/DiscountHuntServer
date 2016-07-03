@@ -21,6 +21,7 @@ class DiscountSearch < ActiveRecord::Base
     Jbuilder.new do |json|
       json.array! discounts do |discount|
         json.extract! discount, :id, :title
+        json.location discount.location, :lat, :lng if discount.location
       end
     end
   end

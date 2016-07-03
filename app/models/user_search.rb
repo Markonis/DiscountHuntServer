@@ -34,6 +34,7 @@ class UserSearch < ActiveRecord::Base
     Jbuilder.new do |json|
       json.array! users do |user|
         json.extract! user, :id, :first_name, :last_name
+        json.location user.location, :lat, :lng if user.location
       end
     end
   end
