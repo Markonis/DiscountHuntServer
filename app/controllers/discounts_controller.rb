@@ -32,7 +32,6 @@ class DiscountsController < ApplicationController
         format.html { redirect_to @discount, notice: 'Discount was successfully created.' }
         format.json { render :show, status: :created, location: @discount }
       else
-        byebug
         format.html { render :new }
         format.json { render json: @discount.errors, status: :unprocessable_entity }
       end
