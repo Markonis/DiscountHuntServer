@@ -1,5 +1,8 @@
 class DiscountSearch < ActiveRecord::Base
   belongs_to :user
+  belongs_to :location
+
+  accepts_nested_attributes_for :location
 
   before_create :set_result
 

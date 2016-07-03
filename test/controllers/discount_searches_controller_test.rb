@@ -18,7 +18,11 @@ class DiscountSearchesControllerTest < ActionController::TestCase
 
   test "should create discount_search" do
     assert_difference('DiscountSearch.count') do
-      post :create, discount_search: { query: @discount_search.query, result: @discount_search.result, user_id: @discount_search.user_id }, token: 'token_1'
+      post :create, discount_search: {
+          query: @discount_search.query,
+          user_id: @discount_search.user_id,
+          location_attributes: {lat: 2, lng: 3}
+        }, token: 'token_1'
     end
 
     assert_redirected_to discount_search_path(assigns(:discount_search))

@@ -18,7 +18,11 @@ class UserSearchesControllerTest < ActionController::TestCase
 
   test "should create user_search" do
     assert_difference('UserSearch.count') do
-      post :create, user_search: { hardware_uuid: @user_search.hardware_uuid, query: @user_search.query }, token: 'token_1'
+      post :create, user_search: {
+          hardware_uuid: @user_search.hardware_uuid,
+          query: @user_search.query,
+          location_attributes: {lat: 5, lng: 3}
+        },token: 'token_1'
     end
 
     assert_redirected_to user_search_path(assigns(:user_search))
