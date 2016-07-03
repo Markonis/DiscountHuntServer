@@ -34,8 +34,6 @@ class UserSearch < ActiveRecord::Base
     Jbuilder.new do |json|
       json.array! users do |user|
         json.extract! user, :id, :first_name, :last_name
-        json.photo user.photo
-        json.location user.location
       end
     end
   end
