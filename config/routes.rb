@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_location_changes
   resources :user_searches
   resources :discount_searches
   resources :user_sessions, only: [:create, :update]

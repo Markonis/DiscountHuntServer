@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160704075207) do
+ActiveRecord::Schema.define(version: 20160704084012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,16 @@ ActiveRecord::Schema.define(version: 20160704075207) do
   end
 
   add_index "user_devices", ["user_id"], name: "index_user_devices_on_user_id", using: :btree
+
+  create_table "user_location_changes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "location_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "user_location_changes", ["location_id"], name: "index_user_location_changes_on_location_id", using: :btree
+  add_index "user_location_changes", ["user_id"], name: "index_user_location_changes_on_user_id", using: :btree
 
   create_table "user_searches", force: :cascade do |t|
     t.string   "query"

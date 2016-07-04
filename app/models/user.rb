@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_one :setting, dependent: :destroy, inverse_of: :user
   has_many :discounts, dependent: :destroy, inverse_of: :user
   has_many :user_devices, dependent: :destroy, inverse_of: :user
+  has_many :user_location_changes, dependent: :destroy, inverse_of: :user
 
 
   validates_presence_of :first_name, :last_name, :phone,
@@ -12,6 +13,7 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :user_devices, :photo
 
+  after_initialize :set_test_password if Rails.env.test?
   after_create :create_setting
   before_destroy :destroy_friendships
 
@@ -32,6 +34,10 @@ class User < ActiveRecord::Base
 
   def destroy_friendships
     friendships.each(&:destroy)
+  end
+
+  def set_test_password
+    self.password = '123456'
   end
 
   def self.by_credentials(username, password)

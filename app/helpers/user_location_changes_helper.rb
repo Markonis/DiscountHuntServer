@@ -1,0 +1,2 @@
+module UserLocationChangesHelper
+end

@@ -3,14 +3,12 @@ require 'test_helper'
 class UserSessionsControllerTest < ActionController::TestCase
   setup do
     johnny = users(:user_one)
-    johnny.password = '123'
-    johnny.save
     @user_session = user_sessions(:user_session_one)
   end
 
   test "should create user_session" do
     assert_difference('UserSession.count') do
-      post :create, user_session: { username: 'johnny', password: '123' }
+      post :create, user_session: { username: 'johnny', password: '123456' }
     end
 
     assert_redirected_to user_session_path(assigns(:user_session))
