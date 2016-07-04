@@ -20,7 +20,7 @@ class DiscountSearch < ActiveRecord::Base
     relation = relation.includes(:location)
 
     if location.present?
-      relation = relation.where(location_id: Location.in_radius(location, 6))
+      relation = relation.where(location_id: Location.in_radius(location))
     end
 
     relation

@@ -21,7 +21,10 @@ class DiscountSearchTest < ActiveSupport::TestCase
 
   test "finds correct discounts given a location and radius" do
     instance = DiscountSearch.new
-    instance.location = locations(:location_two)
+    location = locations(:location_two)
+    location.radius = 5
+    instance.location = location
+
     result = instance.perform_search
     assert_equal 2, result.count
   end
