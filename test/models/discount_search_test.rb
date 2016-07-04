@@ -4,11 +4,11 @@ class DiscountSearchTest < ActiveSupport::TestCase
   test "finds correct discounts" do
     instance = DiscountSearch.new
     result = instance.perform_search
-    assert_equal 2, result.count
+    assert_equal 4, result.count
 
     instance = DiscountSearch.new(query: "with")
     result = instance.perform_search
-    assert_equal 2, result.count
+    assert_equal 3, result.count
 
     instance = DiscountSearch.new(query: "Man")
     result = instance.perform_search
@@ -17,5 +17,12 @@ class DiscountSearchTest < ActiveSupport::TestCase
     instance = DiscountSearch.new(query: "Telephone")
     result = instance.perform_search
     assert_equal 0, result.count
+  end
+
+  test "finds correct discounts given a location and radius" do
+    instance = DiscountSearch.new
+    instance.location = locations(:location_two)
+    result = instance.perform_search
+    assert_equal 2, result.count
   end
 end

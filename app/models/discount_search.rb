@@ -17,7 +17,13 @@ class DiscountSearch < ActiveRecord::Base
       Discount.all
     end
 
-    relation.includes(:location)
+    relation = relation.includes(:location)
+
+    if location.present?
+      relation = relation.where(location_id: Location.in_radius(location, 6))
+    end
+
+    relation
   end
 
   def discounts_to_builder(discounts)

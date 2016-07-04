@@ -7,11 +7,31 @@ discount_one:
   votes: 1
   price: 31.45
   user_id: 1
+  location_id: 1
 
 discount_two:
   title: Man shirt
   description: Blue shirt with short sleaves
   category: Clothes
-  votes: 1
+  votes: 4
   price: 20.32
   user_id: 1
+  location_id: 2
+
+discount_three:
+  title: Women's shirt
+  description: Red shirt with long sleaves
+  category: Clothes
+  votes: 3
+  price: 26.88
+  user_id: 2
+  location_id: 3
+
+discount_four:
+  title: MacBook Pro
+  description: The fifteen inch model from late 2015
+  category: Electronics
+  votes: 2
+  price: 1824.32
+  user_id: 2
+  location_id: 4
