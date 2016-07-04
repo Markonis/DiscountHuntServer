@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :user_devices, dependent: :destroy, inverse_of: :user
   has_many :user_location_changes, dependent: :destroy, inverse_of: :user
 
-
+  validates_uniqueness_of :username
   validates_presence_of :first_name, :last_name, :phone,
     :username, :password
 

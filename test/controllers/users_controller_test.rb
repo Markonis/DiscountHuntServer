@@ -6,7 +6,7 @@ class UsersControllerTest < ActionController::TestCase
 
     @create_update_params = {
       first_name: @user.first_name, last_name: @user.last_name,
-      phone: @user.phone, username: @user.username, password: 'testpass',
+      phone: @user.phone, username: 'testusername', password: 'testpass',
       photo_id: 1, location_id: 1, user_devices_attributes: [{hardware_uuid: 'XYZ'}]}
   end
 
