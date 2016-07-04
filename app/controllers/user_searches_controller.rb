@@ -71,6 +71,6 @@ class UserSearchesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_search_params
       params.require(:user_search).permit(:query, :hardware_uuid, :friends_with,
-        location_attributes: [:lat, :lng])
+        location_attributes: [:lat, :lng, :radius])
     end
 end
