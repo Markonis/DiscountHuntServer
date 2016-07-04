@@ -23,6 +23,11 @@ class DiscountSearch < ActiveRecord::Base
       relation = relation.where(location_id: Location.in_radius(location))
     end
 
+    if by_friends_of.present?
+      friends_ids = User.find(by_friends_of).friends.map(&:id).uniq
+      relation = relation.where(user_id: friends_ids)
+    end
+
     relation
   end
 

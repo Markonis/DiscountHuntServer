@@ -71,6 +71,6 @@ class DiscountSearchesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def discount_search_params
       params.require(:discount_search).permit(:query, :result, :user_id,
-        location_attributes: [:lat, :lng, :radius])
+        :by_friends_of, location_attributes: [:lat, :lng, :radius])
     end
 end

@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 discount_one:
+  id: 1
   title: Computer mouse
   description: Very nice mouse with red light
   category: Electronics
@@ -10,6 +11,7 @@ discount_one:
   location_id: 1
 
 discount_two:
+  id: 2
   title: Man shirt
   description: Blue shirt with short sleaves
   category: Clothes
@@ -19,6 +21,7 @@ discount_two:
   location_id: 2
 
 discount_three:
+  id: 3
   title: Women's shirt
   description: Red shirt with long sleaves
   category: Clothes
@@ -28,6 +31,7 @@ discount_three:
   location_id: 3
 
 discount_four:
+  id: 4
   title: MacBook Pro
   description: The fifteen inch model from late 2015
   category: Electronics

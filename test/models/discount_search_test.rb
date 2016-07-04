@@ -28,4 +28,13 @@ class DiscountSearchTest < ActiveSupport::TestCase
     result = instance.perform_search
     assert_equal 2, result.count
   end
+
+  test "finds correct discounts given by_friends_of" do
+    instance = DiscountSearch.new by_friends_of: 1
+    result_ids = instance.perform_search.map(&:id)
+
+    assert_equal 2, result_ids.size
+    assert_not result_ids.include?(1)
+    assert result_ids.include?(3)
+  end
 end
