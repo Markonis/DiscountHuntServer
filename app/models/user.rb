@@ -37,6 +37,10 @@ class User < ActiveRecord::Base
     friendships.each(&:destroy)
   end
 
+  def rank
+    discounts.includes(:discount_votes).flat_map(&:discount_votes).size
+  end
+
   def set_test_password
     self.password = '123456'
   end
