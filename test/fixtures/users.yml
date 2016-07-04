@@ -19,7 +19,7 @@ user_two:
   username: lisa
   encrypted_password: pass321
   encrypted_password_iv: ABCDEFGAHC121532122
-  location_id: 1
+  location_id: 2
   photo_id: 1
 
 user_three:
@@ -30,5 +30,5 @@ user_three:
   username: bart
   encrypted_password: pass456
   encrypted_password_iv: ABCDEFGAHC121532122
-  location_id: 1
+  location_id: 3
   photo_id: 1

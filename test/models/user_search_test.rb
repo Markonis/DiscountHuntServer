@@ -33,4 +33,14 @@ class UserSearchTest < ActiveSupport::TestCase
     assert_equal 1, result.count
     assert_equal 'John', result.first.first_name
   end
+
+  test "finds the correct users by given location" do
+    instance = UserSearch.new
+    location = locations(:location_two)
+    location.radius = 5
+    instance.location = location
+
+    result = instance.perform_search
+    assert_equal 2, result.count
+  end
 end

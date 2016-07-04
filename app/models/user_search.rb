@@ -30,7 +30,13 @@ class UserSearch < ActiveRecord::Base
       relation = relation.where(id: user_ids)
     end
 
-    relation.includes(:location)
+    relation = relation.includes(:location)
+
+    if location.present?
+      relation = relation.where(location_id: Location.in_radius(location))
+    end
+
+    relation
   end
 
   def users_to_builder(users)
