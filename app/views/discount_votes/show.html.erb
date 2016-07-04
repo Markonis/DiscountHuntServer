@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @discount_vote.user %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @discount_vote.discount %>
+</p>
+
+<%= link_to 'Edit', edit_discount_vote_path(@discount_vote) %> |
+<%= link_to 'Back', discount_votes_path %>
