@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friends_rankings
   resources :discount_votes
   resources :user_location_changes
   resources :user_searches

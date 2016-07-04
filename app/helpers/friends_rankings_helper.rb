@@ -1,0 +1,2 @@
+module FriendsRankingsHelper
+end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160704133229) do
+ActiveRecord::Schema.define(version: 20160704193253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 20160704133229) do
   add_index "discounts", ["location_id"], name: "index_discounts_on_location_id", using: :btree
   add_index "discounts", ["photo_id"], name: "index_discounts_on_photo_id", using: :btree
   add_index "discounts", ["user_id"], name: "index_discounts_on_user_id", using: :btree
+
+  create_table "friends_rankings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "friends_rankings", ["user_id"], name: "index_friends_rankings_on_user_id", using: :btree
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_a_id"

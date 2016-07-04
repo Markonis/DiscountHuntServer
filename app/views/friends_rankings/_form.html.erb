@@ -1,0 +1,21 @@
+<%= form_for(@friends_ranking) do |f| %>
+  <% if @friends_ranking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@friends_ranking.errors.count, "error") %> prohibited this friends_ranking from being saved:</h2>
+
+      <ul>
+      <% @friends_ranking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
