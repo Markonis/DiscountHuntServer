@@ -18,7 +18,7 @@ class DiscountsControllerTest < ActionController::TestCase
 
   test "should create discount" do
     assert_difference('Discount.count') do
-      post :create, token: 'token_1', discount: { category: @discount.category, description: @discount.description, location_id: @discount.location_id, price: @discount.price, title: @discount.title, user_id: @discount.user_id, votes: @discount.votes, photo_id: @discount.photo_id }
+      post :create, token: 'token_1', discount: { category: @discount.category, description: @discount.description, location_id: @discount.location_id, price: @discount.price, title: @discount.title, user_id: @discount.user_id, photo_id: @discount.photo_id }
     end
 
     assert_redirected_to discount_path(assigns(:discount))
@@ -35,7 +35,7 @@ class DiscountsControllerTest < ActionController::TestCase
   end
 
   test "should update discount" do
-    patch :update, token: 'token_1', id: @discount, discount: { category: @discount.category, description: @discount.description, location_id: @discount.location_id, price: @discount.price, title: @discount.title, user_id: @discount.user_id, votes: @discount.votes }
+    patch :update, token: 'token_1', id: @discount, discount: { category: @discount.category, description: @discount.description, location_id: @discount.location_id, price: @discount.price, title: @discount.title, user_id: @discount.user_id }
     assert_redirected_to discount_path(assigns(:discount))
   end
 

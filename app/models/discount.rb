@@ -7,4 +7,8 @@ class Discount < ActiveRecord::Base
 
   validates_presence_of :title, :category, :price, :user
   accepts_nested_attributes_for :location, :photo
+
+  def votes
+    discount_votes.count
+  end
 end
