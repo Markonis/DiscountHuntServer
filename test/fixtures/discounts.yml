@@ -17,7 +17,7 @@ discount_two:
   category: Clothes
   votes: 4
   price: 20.32
-  user_id: 1
+  user_id: 2
   location_id: 2
 
 discount_three:
@@ -27,7 +27,7 @@ discount_three:
   category: Clothes
   votes: 3
   price: 26.88
-  user_id: 2
+  user_id: 3
   location_id: 3
 
 discount_four:
@@ -37,5 +37,5 @@ discount_four:
   category: Electronics
   votes: 2
   price: 1824.32
-  user_id: 2
+  user_id: 3
   location_id: 4

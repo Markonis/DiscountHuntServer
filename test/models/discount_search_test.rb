@@ -34,7 +34,8 @@ class DiscountSearchTest < ActiveSupport::TestCase
     result_ids = instance.perform_search.map(&:id)
 
     assert_equal 2, result_ids.size
-    assert_not result_ids.include?(1)
-    assert result_ids.include?(3)
+    assert result_ids.include?(1)
+    assert result_ids.include?(2)
+    assert_not result_ids.include?(3)
   end
 end

@@ -24,7 +24,7 @@ class DiscountSearch < ActiveRecord::Base
     end
 
     if by_friends_of.present?
-      friends_ids = User.find(by_friends_of).friends.map(&:id).uniq
+      friends_ids = User.find(by_friends_of).friends.map(&:id).uniq + [by_friends_of]
       relation = relation.where(user_id: friends_ids)
     end
 
