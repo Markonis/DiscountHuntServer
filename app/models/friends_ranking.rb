@@ -11,7 +11,7 @@ class FriendsRanking < ActiveRecord::Base
 
   def assemble_list
     list = user.friends + [user]
-    list.sort_by {|user| user.rank}
+    list.sort_by{|user| user.rank}.reverse
   end
 
   def users_to_builder(list)
